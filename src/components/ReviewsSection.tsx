@@ -34,8 +34,8 @@ export function ReviewsSection() {
           </article>
         </div>
         <div className="reviews-visual">
-          <img src="/images/product/flat-lay.jpg" alt="Nitric Oxide mixed berry flat lay" />
-          <img src="/images/product/jar-angled.jpg" alt="zenvora Nitric Oxide product jar" />
+          <img src="/images/product/flat-lay.png" alt="Nitric Oxide mixed berry flat lay" />
+          <img src="/images/product/jar-angled.png" alt="zenvora Nitric Oxide product jar" />
         </div>
       </div>
     </section>

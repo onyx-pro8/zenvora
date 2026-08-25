@@ -19,7 +19,7 @@ export function LifestyleBanner() {
         </div>
         <div className="lifestyle-banner__media">
           <img
-            src="/images/product/lifestyle-athlete.jpg"
+            src="/images/product/lifestyle-athlete.png"
             alt="zenvora Nitric Oxide lifestyle"
           />
         </div>

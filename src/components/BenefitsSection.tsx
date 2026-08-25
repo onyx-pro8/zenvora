@@ -51,7 +51,7 @@ export function BenefitsSection() {
           ))}
         </div>
         <div className="benefits-banner">
-          <img src="/images/product/pour-shot.jpg" alt="Mixing zenvora Nitric Oxide drink" />
+          <img src="/images/product/pour-shot.png" alt="Mixing zenvora Nitric Oxide drink" />
           <div className="benefits-banner__copy">
             <h3>Supports cardio health · blood pressure · natural energy</h3>
             <p>

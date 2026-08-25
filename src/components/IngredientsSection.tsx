@@ -24,7 +24,7 @@ export function IngredientsSection() {
         </div>
         <div className="ingredients-visual">
           <img
-            src="/images/product/ingredients-3in1.jpg"
+            src="/images/product/ingredients-3in1.png"
             alt="Organic beets, pomegranate, and red spinach formula"
           />
         </div>

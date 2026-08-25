@@ -5,7 +5,7 @@ export function HowToUse() {
     <section className="howto-section" id="how-to-use">
       <div className="container howto-layout">
         <div className="howto-visual">
-          <img src="/images/product/how-to-mix.jpg" alt="Mix zenvora Nitric Oxide into your routine" />
+          <img src="/images/product/how-to-mix.png" alt="Mix zenvora Nitric Oxide into your routine" />
           <span className="howto-badge">{PRODUCT.servings} servings</span>
         </div>
         <div className="howto-copy">
