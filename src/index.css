@@ -1,0 +1,573 @@
+button.mobile-menu-item {
+  width: 100%;
+  border: none;
+  background: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+#root {
+  min-height: 100%;
+}
+
+/* Remove header and footer wave animations */
+.hero-ocean,
+.hero-wave,
+.waves-animated {
+  display: none !important;
+  animation: none !important;
+}
+
+.hero-wave--back,
+.hero-wave--mid,
+.hero-wave--front,
+.waves-animated .parallax1 > use,
+.waves-animated .parallax2 > use,
+.waves-animated .parallax3 > use,
+.waves-animated .parallax4 > use {
+  animation: none !important;
+}
+
+.home-hero::after {
+  display: none !important;
+}
+
+.header-cart svg path {
+  fill: #043927 !important;
+}
+
+/* ── Hero product updates ── */
+.hero-kicker {
+  color: #a8e6c3;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+
+.hero-script {
+  display: block;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.55em;
+  color: #9be0b8;
+  margin-top: 8px;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  margin: 0 0 28px;
+}
+
+.hero-rating {
+  color: #ffd76a;
+  font-weight: 700;
+}
+
+.hero-product-wrap {
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero-product-img {
+  width: 100%;
+  max-width: 580px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 18px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  animation: heroFloat 3.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-product-img {
+    animation: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-product-wrap {
+    max-width: 480px;
+  }
+
+  .hero-product-img {
+    max-width: 420px;
+  }
+}
+
+.hero-image-placeholder {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  border-radius: 18px;
+  border: 2px dashed rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+}
+
+.hero-image-placeholder span {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.hero-image-placeholder small {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* ── Benefits ── */
+.benefits-section {
+  padding: 72px 0;
+  background: #f7faf8;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.benefits-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 8px 28px rgba(4, 57, 39, 0.06);
+  text-align: center;
+}
+
+.benefits-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 122, 77, 0.1);
+  color: #043927;
+}
+
+.benefits-card h3 {
+  font-size: 18px;
+  margin: 0 0 10px;
+  color: #043927;
+}
+
+.benefits-card p {
+  margin: 0;
+  color: #4a5568;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.benefits-banner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #043927;
+  color: #fff;
+}
+
+.benefits-banner img {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+}
+
+.benefits-banner__copy {
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.benefits-banner__copy h3 {
+  font-size: 24px;
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+
+.benefits-banner__copy p {
+  margin: 0;
+  opacity: 0.88;
+  line-height: 1.6;
+}
+
+/* ── Ingredients ── */
+.ingredients-section {
+  padding: 72px 0;
+  background: #f5efe6;
+}
+
+.ingredients-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.ingredients-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ingredient-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.ingredient-card h3 {
+  margin: 0 0 6px;
+  color: #043927;
+  font-size: 18px;
+}
+
+.ingredient-card p {
+  margin: 0;
+  color: #5a4a42;
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+.ingredients-visual img {
+  width: 100%;
+  border-radius: 20px;
+  display: block;
+  box-shadow: 0 16px 40px rgba(4, 57, 39, 0.12);
+}
+
+/* ── How to use ── */
+.howto-section {
+  padding: 72px 0;
+  background: #fff;
+}
+
+.howto-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.howto-visual {
+  position: relative;
+}
+
+.howto-visual img {
+  width: 100%;
+  border-radius: 20px;
+  display: block;
+}
+
+.howto-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: #fff;
+  color: #043927;
+  font-weight: 800;
+  font-size: 18px;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.15;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.howto-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+}
+
+.howto-list li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  color: #1a2332;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.howto-list span {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #043927;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.features-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.feature-pill {
+  background: #f4f7f5;
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.feature-pill strong {
+  color: #043927;
+  font-size: 14px;
+}
+
+.feature-pill span {
+  color: #5a6b62;
+  font-size: 13px;
+}
+
+/* ── Lifestyle banner ── */
+.lifestyle-banner {
+  padding: 0;
+  background: #001a11;
+  color: #fff;
+}
+
+.lifestyle-banner__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  max-width: 1220px;
+}
+
+.lifestyle-banner__copy {
+  padding: 64px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lifestyle-banner__copy h2 {
+  font-size: 32px;
+  line-height: 1.25;
+  margin: 10px 0 16px;
+}
+
+.lifestyle-banner__copy p {
+  opacity: 0.88;
+  line-height: 1.65;
+  margin: 0 0 28px;
+}
+
+.lifestyle-banner__media img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Supplement facts ── */
+.facts-section {
+  padding: 72px 0;
+  background: #f8fafc;
+}
+
+.facts-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.facts-table-wrap {
+  background: #fff;
+  border: 2px solid #1a2332;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.facts-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.facts-table th,
+.facts-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #d8dee6;
+  text-align: left;
+}
+
+.facts-table th {
+  background: #043927;
+  color: #fff;
+  font-weight: 700;
+}
+
+.facts-table tr:last-child td {
+  border-bottom: none;
+}
+
+.facts-note {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #5a6b62;
+  line-height: 1.6;
+}
+
+.facts-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.facts-visual img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+}
+
+/* ── Reviews ── */
+.reviews-section {
+  padding: 72px 0;
+  background: #fff;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.review-card {
+  background: #f7faf8;
+  border-radius: 16px;
+  padding: 28px 24px;
+}
+
+.review-card--score {
+  background: #043927;
+  color: #fff;
+  text-align: center;
+}
+
+.review-score {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.review-stars {
+  color: #ffd76a;
+  margin: 8px 0;
+  letter-spacing: 2px;
+}
+
+.review-card h3 {
+  margin: 0 0 10px;
+  color: #043927;
+  font-size: 18px;
+}
+
+.review-card p {
+  margin: 0;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+.review-card--score p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.reviews-visual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.reviews-visual img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+  max-height: 320px;
+  object-fit: cover;
+}
+
+@media (max-width: 992px) {
+  .benefits-banner,
+  .ingredients-layout,
+  .howto-layout,
+  .lifestyle-banner__inner,
+  .facts-layout,
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-flex {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .lifestyle-banner__copy {
+    padding: 40px 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .features-row,
+  .reviews-visual {
+    grid-template-columns: 1fr;
+  }
+}

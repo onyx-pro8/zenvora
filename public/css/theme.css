@@ -1,0 +1,247 @@
+/* zenvora Color Palette */
+:root {
+  /* Primary Brand Colors */
+  --color-primary: #043927;
+  --color-primary-light: #007a4d;
+  --color-primary-dark: #001a11;
+
+  /* Secondary Accent Colors */
+  --color-accent: #005a32;
+  --color-accent-light: #007a4d;
+  --color-accent-dark: #043927;
+
+  /* Neutral Colors */
+  --color-background: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-surface-dark: #F8FAFC;
+
+  /* Text Colors */
+  --color-text-primary: #1A2332;
+  --color-text-secondary: #4A5568;
+  --color-text-tertiary: #718096;
+  --color-text: #1A2332;
+
+  /* Accent Colors for UI Elements */
+  --color-success: #10B981;
+  --color-info: #007a4d;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #000000 0%, #043927 100%);
+  --gradient-accent: linear-gradient(135deg, #043927 0%, #007a4d 100%);
+  --gradient-subtle: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+
+  /* Neutrals */
+  --color-white: #ffffff;
+  --color-gray: #888;
+  --color-light-gray: #a4a0a0;
+
+  /* Aliases (used by checkout, cart, product CSS) */
+  --color-teal: #043927;
+  --color-teal-light: #007a4d;
+  --color-teal-dark: #001a11;
+
+  /* Layout */
+  --page-width: 1200px;
+  --spacing-sections-desktop: 36px;
+  --spacing-sections-mobile: 24px;
+
+  /* Component Tokens */
+  --buttons-radius: 8px;
+  --inputs-radius: 6px;
+  --product-card-corner-radius: 10px;
+  --product-card-shadow-opacity: 0.08;
+  --product-card-shadow-blur: 12px;
+
+  /* Transitions */
+  --duration-short: 100ms;
+  --duration-default: 250ms;
+  --duration-long: 500ms;
+  --duration-extra-long: 600ms;
+
+  /* Cart Drawer */
+  --drawer-width: 420px;
+  --drawer-width-large: 500px;
+
+  /* Legacy compatibility */
+  --color1: #043927;
+  --color2: #043927;
+  --color3: #043927;
+  --color4: #1A2332;
+  --varHover: #001a11;
+  --color-secondary: #007a4d;
+  --color-action: #007a4d;
+}
+
+/* Subheader bar - primary background with white text (global override) */
+.subheader-soc {
+  background: var(--color-primary-dark) !important;
+}
+.subheader-soc_cont a,
+.subheader-soc_phone,
+.subheader-soc_cont {
+  color: #ffffff !important;
+}
+.subheader-soc_cont a:hover {
+  opacity: 0.7;
+}
+
+/* Footer - primary background with white text/icons (global override) */
+footer {
+  background: var(--color-primary) !important;
+  color: #ffffff !important;
+}
+
+footer .footer-topbar__title {
+  color: #ffffff !important;
+}
+
+footer .footer-topbar__info-box {
+  color: #ffffff !important;
+}
+
+footer .footer-topbar__info-box svg path {
+  fill: #ffffff !important;
+}
+
+footer .ft-form__text {
+  color: #ffffff !important;
+}
+
+footer .ft-form__input {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: #ffffff !important;
+}
+
+footer .ft-form__input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+footer .ft-form__button {
+  background: #ffffff !important;
+  color: var(--color-primary) !important;
+}
+
+footer .ft-form__button:hover {
+  background: #E8F5E9 !important;
+  color: var(--color-primary) !important;
+}
+
+footer .footer-navigation a {
+  color: #ffffff !important;
+}
+
+footer .footer-navigation a:hover {
+  color: #E8F5E9 !important;
+}
+
+footer .footer-lowbar {
+  border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+footer .copyright {
+  color: #ffffff !important;
+}
+
+footer .footer-cards img {
+  opacity: 1 !important;
+}
+
+footer .footer_phone,
+footer .phone__line {
+  color: #ffffff !important;
+}
+
+footer .phone__line:after {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Logo size override - zenvora stacked logo */
+.header-logo img,
+.header-logo {
+  max-width: 160px !important;
+  max-height: 72px !important;
+}
+.header-logo img,
+img.header-logo {
+  width: auto !important;
+  height: 72px !important;
+  max-width: 160px !important;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── Header Redesign: Rounded pill bar ── */
+.header-section {
+  background: #ffffff !important;
+  border-radius: 50px !important;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10) !important;
+  margin: 12px 24px !important;
+}
+.header-section .header-topbar {
+  padding: 8px 28px !important;
+}
+
+/* Bold nav links with dark text */
+.header-navigations .desktop-nav-link {
+  font-weight: 700 !important;
+  color: var(--color-text-primary) !important;
+  text-decoration: none !important;
+  padding: 8px 14px !important;
+  border-radius: 6px !important;
+  transition: background 0.2s ease, color 0.2s ease !important;
+  position: relative !important;
+}
+.header-navigations .desktop-nav-link:hover {
+  background: rgba(0, 122, 77, 0.10) !important;
+  color: var(--color-primary) !important;
+}
+.header-navigations .desktop-nav-link::after,
+.header-navigations .desktop-nav-link.active::after {
+  display: none !important;
+}
+
+/* Active page pill indicator */
+.header-navigations .desktop-nav-link.active {
+  background: var(--color-primary) !important;
+  color: #ffffff !important;
+  border-radius: 6px !important;
+}
+.header-navigations .desktop-nav-link.active:hover {
+  background: var(--color-primary-dark) !important;
+  color: #ffffff !important;
+}
+
+/* Announcement bar bold text */
+.announcement-bar__content {
+  font-weight: 700 !important;
+}
+
+/* ── Mobile: revert pill shape ── */
+@media (max-width: 768px) {
+  .header-section {
+    border-radius: 0 !important;
+    margin: 0 !important;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1) !important;
+  }
+  .header-logo img,
+  .header-logo {
+    max-width: 110px !important;
+    max-height: 52px !important;
+  }
+  .header-logo img {
+    width: auto !important;
+    height: 52px !important;
+    max-width: 110px !important;
+  }
+  .header-navigations .desktop-nav-link {
+    padding: 15px 14px !important;
+  }
+  .header-navigations .desktop-nav-link.active {
+    background: var(--color-primary) !important;
+    color: #ffffff !important;
+    border-bottom-color: var(--color-primary) !important;
+  }
+}
