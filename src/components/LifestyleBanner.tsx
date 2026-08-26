@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { PRODUCT } from '../data/site'
 
 export function LifestyleBanner() {
@@ -13,9 +14,9 @@ export function LifestyleBanner() {
             {PRODUCT.name} {PRODUCT.tagline} — a powder formula for healthy circulation support,
             daily energy, and performance-minded routines.
           </p>
-          <a className="home-button button" href="#buy">
+          <Link className="home-button button" to={`/product/${PRODUCT.id}`}>
             SHOP {PRODUCT.name.toUpperCase()}
-          </a>
+          </Link>
         </div>
         <div className="lifestyle-banner__media">
           <img

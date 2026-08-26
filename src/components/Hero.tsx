@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { HERO_BADGES, PRODUCT } from '../data/site'
 
 export function Hero() {
@@ -18,9 +19,9 @@ export function Hero() {
             <span>{PRODUCT.servings} servings</span>
             <span>{PRODUCT.flavor}</span>
           </div>
-          <a className="get_page home-button button" href="#benefits">
-            LEARN MORE
-          </a>
+          <Link className="get_page home-button button" to={`/product/${PRODUCT.id}`}>
+            SHOP NOW
+          </Link>
         </div>
 
         <div className="home-right">
@@ -28,8 +29,8 @@ export function Hero() {
             <div className="hero-glow" />
             <img
               src="/images/product/hero-jar.png"
-              width={640}
-              height={640}
+              width={820}
+              height={820}
               alt={`${PRODUCT.name} ${PRODUCT.tagline}`}
               className="hero-visual-img hero-product-img"
               loading="eager"

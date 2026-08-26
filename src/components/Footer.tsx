@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from 'react'
+import { Link } from 'react-router-dom'
 import { QUICK_LINKS, SERVICE_LINKS, SITE } from '../data/site'
 
 export function Footer() {
@@ -10,7 +11,7 @@ export function Footer() {
   }
 
   return (
-    <footer id="contacts">
+    <footer>
       <div className="container footer-container">
         <div className="footer-disclaimer" />
         <div className="footer-topbar footer-topbar--grid">
@@ -34,9 +35,9 @@ export function Footer() {
             <ul className="footer-col__links">
               {QUICK_LINKS.map((link) => (
                 <li key={link.label}>
-                  <a className="get_page" href={link.href}>
+                  <Link className="get_page" to={link.href}>
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -47,9 +48,9 @@ export function Footer() {
             <ul className="footer-col__links">
               {SERVICE_LINKS.map((link) => (
                 <li key={link.label}>
-                  <a className="get_page" href={link.href}>
+                  <Link className="get_page" to={link.href}>
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

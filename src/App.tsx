@@ -1,40 +1,38 @@
-import { AnnouncementBar } from './components/AnnouncementBar'
-import { BenefitsSection } from './components/BenefitsSection'
-import { Footer } from './components/Footer'
-import { Header } from './components/Header'
-import { Hero } from './components/Hero'
-import { HowToUse } from './components/HowToUse'
-import { IngredientsSection } from './components/IngredientsSection'
-import { LifestyleBanner } from './components/LifestyleBanner'
-import { ReviewsSection } from './components/ReviewsSection'
-import { ShippingSection } from './components/ShippingSection'
-import { SubHeader } from './components/SubHeader'
-import { SupplementFacts } from './components/SupplementFacts'
-import { TrustTicker } from './components/TrustTicker'
-import { WhyChoose } from './components/WhyChoose'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { Layout } from './components/Layout'
+import { CancelPage } from './pages/CancelPage'
+import { CartPage } from './pages/CartPage'
+import { CheckoutPage } from './pages/CheckoutPage'
+import { ContactsPage } from './pages/ContactsPage'
+import { HomePage } from './pages/HomePage'
+import { PrivacyPage } from './pages/PrivacyPage'
+import { ProductPage } from './pages/ProductPage'
+import { RefundPage } from './pages/RefundPage'
+import { ShippingPolicyPage } from './pages/ShippingPolicyPage'
+import { ShopPage } from './pages/ShopPage'
+import { TermsPage } from './pages/TermsPage'
+import { VipPage } from './pages/VipPage'
 
-function App() {
+export default function App() {
   return (
-    <div className="wrapper">
-      <AnnouncementBar />
-      <SubHeader />
-      <Header />
-      <main>
-        <Hero />
-        <TrustTicker />
-        <BenefitsSection />
-        <IngredientsSection />
-        <HowToUse />
-        <LifestyleBanner />
-        <SupplementFacts />
-        <ReviewsSection />
-        <TrustTicker />
-        <WhyChoose />
-        <ShippingSection />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="shop" element={<ShopPage />} />
+          <Route path="product/:id" element={<ProductPage />} />
+          <Route path="vip" element={<VipPage />} />
+          <Route path="contacts" element={<ContactsPage />} />
+          <Route path="privacy-policy" element={<PrivacyPage />} />
+          <Route path="terms" element={<TermsPage />} />
+          <Route path="cancellation-request" element={<CancelPage />} />
+          <Route path="refund-policy" element={<RefundPage />} />
+          <Route path="shipping-policy" element={<ShippingPolicyPage />} />
+          <Route path="cart" element={<CartPage />} />
+          <Route path="checkout" element={<CheckoutPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
-
-export default App
