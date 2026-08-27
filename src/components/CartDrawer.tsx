@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { CartItemMedia } from './CartItemMedia'
 import { useCart } from '../context/CartContext'
 import { FREE_SHIPPING_THRESHOLD } from '../data/site'
 
@@ -85,9 +86,7 @@ export function CartDrawer() {
             <ul className="cart-drawer__items">
               {items.map((item) => (
                 <li key={item.id} className="cart-drawer__item">
-                  <div className="cart-drawer__item-image">
-                    <img src={item.image} alt={item.name} />
-                  </div>
+                  <CartItemMedia item={item} className="cart-drawer__item-image" />
                   <div className="cart-drawer__item-details">
                     <div className="cart-drawer__item-title">{item.name}</div>
                     <div className="cart-drawer__item-price">${item.price.toFixed(2)}</div>

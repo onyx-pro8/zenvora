@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { CartItemMedia } from '../components/CartItemMedia'
 import { PageShell } from '../components/PageShell'
 import { useCart } from '../context/CartContext'
 import { FREE_SHIPPING_THRESHOLD, PRODUCT, SITE } from '../data/site'
@@ -88,7 +89,7 @@ export function CheckoutPage() {
           <ul className="checkout-summary-items">
             {items.map((item) => (
               <li key={item.id}>
-                <img src={item.image} alt="" />
+                <CartItemMedia item={item} decorative />
                 <span>
                   {item.name} × {item.qty}
                 </span>

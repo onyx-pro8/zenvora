@@ -11,7 +11,7 @@ import { PRODUCT, VIP } from '../data/site'
 export type CartItem = {
   id: string
   name: string
-  image: string
+  image?: string
   price: number
   qty: number
 }
@@ -38,7 +38,10 @@ function readStoredCart(): CartItem[] {
     const raw = localStorage.getItem(CART_STORAGE_KEY)
     if (!raw) return []
     const parsed = JSON.parse(raw) as CartItem[]
-    return Array.isArray(parsed) ? parsed : []
+    if (!Array.isArray(parsed)) return []
+    return parsed.map((item) =>
+      item.id === VIP.id ? { ...item, image: undefined } : item,
+    )
   } catch {
     return []
   }
@@ -85,7 +88,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
           {
             id: VIP.id,
             name: VIP.name,
-            image: PRODUCT.image,
             price: VIP.price,
             qty: 1,
           },

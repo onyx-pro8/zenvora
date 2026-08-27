@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { CartItemMedia } from '../components/CartItemMedia'
 import { TrustTicker } from '../components/TrustTicker'
 import { PageShell } from '../components/PageShell'
 import { useCart } from '../context/CartContext'
@@ -35,7 +36,7 @@ export function CartPage() {
                       to={item.id === VIP.id ? '/vip' : `/product/${PRODUCT.id}`}
                       className="cart-item__media"
                     >
-                      <img src={item.image} alt={item.name} />
+                      <CartItemMedia item={item} />
                     </Link>
                     <div className="cart-item__info">
                       <Link
