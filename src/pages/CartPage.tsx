@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { CartItemMedia } from '../components/CartItemMedia'
+import { PaymentCards } from '../components/PaymentCards'
 import { TrustTicker } from '../components/TrustTicker'
 import { PageShell } from '../components/PageShell'
 import { useCart } from '../context/CartContext'
@@ -101,10 +102,7 @@ export function CartPage() {
               <Link to="/checkout" className="page-btn page-btn--block">
                 Checkout
               </Link>
-              <div className="cart-page__pay">
-                <img src="/images/visa.svg" alt="Visa" />
-                <img src="/images/master-card.BgjyoRBZ.svg" alt="Mastercard" />
-              </div>
+              <PaymentCards className="cart-page__pay" />
               <p className="cart-page__secure">Secure checkout • 30-day money-back guarantee</p>
               <button type="button" className="cart-page__clear" onClick={clearCart}>
                 Clear cart
