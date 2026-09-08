@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { CartItemMedia } from './CartItemMedia'
+import { PaymentCards } from './PaymentCards'
 import { useCart } from '../context/CartContext'
 import { FREE_SHIPPING_THRESHOLD } from '../data/site'
 
@@ -124,13 +125,10 @@ export function CartDrawer() {
             <Link to="/cart" className="btn cart-drawer__checkout" onClick={closeCart}>
               Checkout
             </Link>
-            <div className="cart-drawer__trust">
-              <div className="cart-drawer__trust-badges">
-                <img src="/images/visa.svg" alt="Visa" />
-                <img src="/images/master-card.BgjyoRBZ.svg" alt="Mastercard" />
+              <div className="cart-drawer__trust">
+                <PaymentCards className="cart-drawer__trust-badges" />
+                <div className="cart-drawer__trust-text">Secure checkout • 30-day money-back guarantee</div>
               </div>
-              <div className="cart-drawer__trust-text">Secure checkout • 30-day money-back guarantee</div>
-            </div>
           </div>
         )}
       </div>

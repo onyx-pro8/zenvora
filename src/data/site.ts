@@ -2,7 +2,7 @@ export const SITE = {
   name: 'zenvora',
   phone: '+1 (226) 678-1909',
   phoneHref: 'tel:+12266781909',
-  email: 'support@zenvora.com',
+  email: 'pursuancerow@gmail.com',
   company: 'Pursuance Row LLC',
   addressLines: ['3444 Flat Iron NE', 'Rio Rancho, NM 87144'],
   hours: 'Monday through Friday 8am to 8pm and Saturday 9am to 5pm EST',

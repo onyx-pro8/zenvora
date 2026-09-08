@@ -957,6 +957,7 @@ body.cart-open {
 
 .cart-page__pay {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
   margin: 14px 0 8px;
@@ -1009,6 +1010,67 @@ body.cart-open {
   display: grid;
   grid-template-columns: 1fr 140px;
   gap: 12px;
+}
+
+.checkout-form__row--triple {
+  grid-template-columns: 1fr 1fr 120px;
+}
+
+.checkout-form__row--payment {
+  grid-template-columns: 1fr 140px;
+}
+
+.checkout-cvv {
+  position: relative;
+  display: block;
+}
+
+.checkout-cvv .form-control {
+  padding-right: 42px;
+}
+
+.checkout-cvv__toggle {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #5a6b63;
+  cursor: pointer;
+}
+
+.checkout-cvv__toggle:hover,
+.checkout-cvv__toggle:focus-visible {
+  color: #043927;
+  background: #eef5f1;
+  outline: none;
+}
+
+.checkout-form__section {
+  margin-top: 12px;
+  padding-top: 18px;
+  border-top: 1px solid #e8eee9;
+}
+
+.checkout-form__check {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 10px !important;
+  font-weight: 600 !important;
+}
+
+.checkout-form__check input {
+  width: 16px;
+  height: 16px;
+  accent-color: #007a4d;
 }
 
 .checkout-summary-items {
@@ -1686,6 +1748,8 @@ button.vip-join-btn {
   .cart-page,
   .checkout-layout,
   .checkout-form__row,
+  .checkout-form__row--triple,
+  .checkout-form__row--payment,
   .product-trust-row,
   .shop-single__gallery {
     grid-template-columns: 1fr;

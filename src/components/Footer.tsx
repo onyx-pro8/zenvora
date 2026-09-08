@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
+import { PaymentCards } from './PaymentCards'
 import { QUICK_LINKS, SERVICE_LINKS, SITE } from '../data/site'
 
 export function Footer() {
@@ -87,10 +88,7 @@ export function Footer() {
 
         <div className="footer-lowbar">
           <div className="footer-copyright">{SITE.copyright}</div>
-          <div className="footer-cards">
-            <img src="/images/visa.svg" alt="Visa" />
-            <img src="/images/master-card.BgjyoRBZ.svg" alt="Mastercard" />
-          </div>
+          <PaymentCards className="footer-cards" />
         </div>
 
         <div className="footer-disclaimer footer-disclaimer--bottom">{SITE.disclaimer}</div>
