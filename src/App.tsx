@@ -11,6 +11,7 @@ import { RefundPage } from './pages/RefundPage'
 import { ShippingPolicyPage } from './pages/ShippingPolicyPage'
 import { ShopPage } from './pages/ShopPage'
 import { TermsPage } from './pages/TermsPage'
+import { ThankYouPage } from './pages/ThankYouPage'
 import { VipPage } from './pages/VipPage'
 
 export default function App() {
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="shipping-policy" element={<ShippingPolicyPage />} />
           <Route path="cart" element={<CartPage />} />
           <Route path="checkout" element={<CheckoutPage />} />
+          <Route path="thank-you" element={<ThankYouPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
