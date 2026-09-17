@@ -1128,6 +1128,258 @@ body.cart-open {
   color: #043927;
 }
 
+/* Thank you / order confirmation */
+.thankyou {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 8px 0 48px;
+  color: #252a32;
+  text-align: center;
+}
+
+.thankyou__title {
+  margin: 0;
+  font-size: clamp(42px, 8vw, 64px);
+  font-weight: 800;
+  color: #043927;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.thankyou__lead {
+  margin: 14px 0 0;
+  font-size: clamp(18px, 2.4vw, 22px);
+  line-height: 1.5;
+  color: #3d4a44;
+}
+
+.thankyou__notes-title {
+  margin: 36px 0 14px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #043927;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.thankyou__notes {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 720px;
+  list-style: none;
+  counter-reset: thankyou-note;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #3d4a44;
+}
+
+.thankyou__notes li {
+  counter-increment: thankyou-note;
+}
+
+.thankyou__notes li::before {
+  content: counter(thankyou-note) '. ';
+  font-weight: 700;
+  color: #043927;
+}
+
+.thankyou__notes strong {
+  color: #043927;
+}
+
+.thankyou__notes a {
+  color: #007a4d;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.thankyou__notes a:hover {
+  color: #043927;
+}
+
+.thankyou__receipt-banner {
+  margin: 28px 20px 0;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: #007a4d;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.thankyou__receipt {
+  margin: 14px 20px 0;
+  padding: 8px 12px 18px;
+  border: 1px solid #c5d4cc;
+  border-radius: 10px;
+  background: #fff;
+  text-align: left;
+}
+
+.thankyou__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.thankyou__table th,
+.thankyou__table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #e8eee9;
+  font-size: 15px;
+  vertical-align: top;
+}
+
+.thankyou__table th {
+  font-weight: 700;
+  color: #043927;
+}
+
+.thankyou__table-center {
+  text-align: center;
+}
+
+.thankyou__table-right {
+  text-align: right;
+}
+
+.thankyou__empty {
+  text-align: center;
+  color: #6b7a73;
+  padding: 24px 10px !important;
+}
+
+.thankyou__totals {
+  margin-top: 12px;
+  padding-top: 14px;
+  border-top: 1px solid #007a4d;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.thankyou__totals > div {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 17px;
+}
+
+.thankyou__totals span {
+  font-weight: 700;
+  color: #043927;
+}
+
+.thankyou__totals strong {
+  font-weight: 700;
+  min-width: 72px;
+  text-align: right;
+}
+
+.thankyou__totals-grand {
+  font-size: 18px;
+}
+
+.thankyou__notice {
+  margin: 24px 20px 0;
+  padding: 18px 20px;
+  border: 2px solid #043927;
+  border-radius: 10px;
+  background: #e8eee9;
+  text-align: center;
+}
+
+.thankyou__notice p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #252a32;
+}
+
+.thankyou__delivery-title {
+  margin: 32px 0 16px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #043927;
+}
+
+.thankyou__delivery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 24px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.thankyou__delivery-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.thankyou__delivery-item strong {
+  color: #043927;
+}
+
+.thankyou__delivery-item span {
+  color: #3d4a44;
+}
+
+.thankyou__contact {
+  margin: 36px 0 0;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #3d4a44;
+}
+
+.thankyou__contact a {
+  color: #007a4d;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.thankyou__contact a:hover {
+  color: #043927;
+}
+
+.thankyou__actions {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .thankyou__receipt-banner,
+  .thankyou__receipt,
+  .thankyou__notice {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .thankyou__delivery-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .thankyou__table th,
+  .thankyou__table td {
+    font-size: 14px;
+    padding: 10px 6px;
+  }
+}
+
 /* Shop */
 .shop-hero {
   background: linear-gradient(135deg, #001a11 0%, #043927 50%, #005a32 100%);
