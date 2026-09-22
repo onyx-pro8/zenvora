@@ -6,6 +6,8 @@ export type OrderReceipt = {
   shipping: number
   total: number
   placedAt: string
+  email: string
+  hasSubscription: boolean
 }
 
 const ORDER_RECEIPT_KEY = 'zenvora-order-receipt'
