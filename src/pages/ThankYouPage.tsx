@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
+import { OrderConfirmationEmail } from '../components/OrderConfirmationEmail'
 import { PageShell } from '../components/PageShell'
 import { readOrderReceipt } from '../data/orderReceipt'
+import { BILLING_DESCRIPTOR } from '../data/subscriptionTerms'
 import { SITE } from '../data/site'
 
 const DELIVERY_TIMES = [
@@ -16,6 +18,9 @@ export function ThankYouPage() {
   const subtotal = receipt?.subtotal ?? 0
   const shipping = receipt?.shipping ?? 0
   const total = receipt?.total ?? 0
+  const email = receipt?.email ?? 'your email address'
+  const hasSubscription = receipt?.hasSubscription ?? false
+  const placedAt = receipt?.placedAt ?? new Date().toISOString()
 
   return (
     <PageShell
@@ -29,18 +34,28 @@ export function ThankYouPage() {
           Your order has been processed and will be shipped quickly to you
         </p>
 
+        <OrderConfirmationEmail
+          email={email}
+          items={items}
+          total={total}
+          placedAt={placedAt}
+          hasSubscription={hasSubscription}
+        />
+
         <h2 className="thankyou__notes-title">A Few Important Notes:</h2>
         <ol className="thankyou__notes">
           <li>
             If you ordered using your card the charge will appear on your statement as{' '}
-            <strong>ZENVORA.COM</strong> or <strong>{SITE.company.toUpperCase()}</strong>
+            <strong>{BILLING_DESCRIPTOR}</strong> or <strong>{SITE.company.toUpperCase()}</strong>
             {'. '}
             Please keep this for your records.
           </li>
-          <li>
-            Please note that any extra special offers you purchased will show up as separate charges
-            on your card statement.
-          </li>
+          {!hasSubscription && (
+            <li>
+              Please note that any extra special offers you purchased will show up as separate charges
+              on your card statement.
+            </li>
+          )}
           <li>
             If you have any questions, concerns or issues please email{' '}
             <a href={`mailto:${SITE.email}`}>{SITE.email}</a> and our customer success team will be

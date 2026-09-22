@@ -2,9 +2,10 @@ import { useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { CartItemMedia } from '../components/CartItemMedia'
 import { PageShell } from '../components/PageShell'
+import { SubscriptionConsent } from '../components/SubscriptionConsent'
 import { useCart } from '../context/CartContext'
 import { saveOrderReceipt } from '../data/orderReceipt'
-import { FREE_SHIPPING_THRESHOLD, PRODUCT } from '../data/site'
+import { FREE_SHIPPING_THRESHOLD, PRODUCT, VIP } from '../data/site'
 
 function formatCardNumber(value: string) {
   const digits = value.replace(/\D/g, '').slice(0, 16)
@@ -29,17 +30,24 @@ export function CheckoutPage() {
   const [cardExpiry, setCardExpiry] = useState('')
   const [cardCvv, setCardCvv] = useState('')
   const [showCvv, setShowCvv] = useState(false)
+  const [subscriptionConsent, setSubscriptionConsent] = useState(false)
+  const hasSubscription = items.some((item) => item.id === VIP.id)
   const shipping = subtotal >= FREE_SHIPPING_THRESHOLD || subtotal === 0 ? 0 : 6.99
   const total = subtotal + shipping
 
-  const onSubmit = (event: FormEvent) => {
+  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+    const formData = new FormData(event.currentTarget)
+    const email = String(formData.get('email') ?? '')
+
     saveOrderReceipt({
       items: items.map((item) => ({ ...item })),
       subtotal,
       shipping,
       total,
       placedAt: new Date().toISOString(),
+      email,
+      hasSubscription,
     })
     clearCart()
     navigate('/thank-you', { replace: true })
@@ -107,6 +115,16 @@ export function CheckoutPage() {
               autoComplete="shipping country-name"
             />
           </label>
+
+          {hasSubscription && (
+            <>
+              <h2 className="checkout-form__section">Subscription consent</h2>
+              <SubscriptionConsent
+                checked={subscriptionConsent}
+                onChange={setSubscriptionConsent}
+              />
+            </>
+          )}
 
           <h2 className="checkout-form__section">Billing information</h2>
           <label className="checkout-form__check">
